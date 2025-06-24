@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeNation UA</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px 40px;
+  background: #111;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid #00ffc3;
+  animation: typing 4s steps(40, end), blink .75s step-end infinite;
+  position: relative;
+  z-index: 1;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-shadow: 1px 1px 5px #000;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #00ffc3 }
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+section, footer {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 20px #00ffc080;
+}
+
+h2 { 
+  text-align: center; 
+  color: #00ffc3; 
+}
+
+ul { 
+  padding-left: 20px; 
+}
+
+label { 
+  display: block; 
+  margin-top: 10px; 
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  background: #112;
+  color: #0ff;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  background: #00ffc3;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+a.btn-google {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #4285F4;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#audioNotice {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 10px;
+  color: #ff0;
+}
+
+/* --- СОЦМЕРЕЖІ --- */
+
+.social-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #222;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #000;
+  margin: 0 10px 15px 10px;
+}
+
+.social-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.social-btn:hover {
+  filter: drop-shadow(0 0 6px #00ffc3);
+  transform: scale(1.15) rotate(5deg);
+  background: #00ffc3;
+  color: #111;
+}
+
+/* Кольори соцмереж */
+.telegram { background: #0088cc; }
+.telegram:hover { background: #00aaff; }
+
+.viber { background: #665cac; }
+.viber:hover { background: #7f6fd1; }
+
+.whatsapp { background: #25d366; }
+.whatsapp:hover { background: #3de88a; }
+
+.tiktok { background: #000; }
+.tiktok:hover { background: #222; }
+
+.instagram {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+.instagram:hover {
+  filter: drop-shadow(0 0 10px #feda75);
+}
+
+/* Tooltip */
+.social-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: #00ffc3;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.social-btn:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .social-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- 🔊 Аудіо -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3d44d8f5b0.mp3?filename=relaxing-background-10814.mp3" type="audio/mpeg" />
+</audio>
+<audio id="clickSound">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_b3b2b22986.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- 🔘 Кнопка запуску музики -->
+<div style="text-align:center; margin-top:10px;">
+  <button onclick="playMusic()">🔊 Увімкнути фонову музику</button>
+  <div id="audioNotice" style="font-size:0.9em; color:#ccc;">* Деякі браузери блокують автозапуск звуку</div>
+</div>
+
+<script>
+  function playMusic() {
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic.paused) {
+      bgMusic.play();
+    }
+  }
+</script>
+<!-- 🧠 Шапка -->
+<header>
+  <div class="stars" id="starsContainer"></div>
+  <h1 id="typing">🚀 Онлайн Навчання для IT-початківців</h1>
+  <p>Від нуля до впевненого старту в ІТ. Реєструйся зараз!</p>
+  <svg viewBox="0 0 1440 320">
+    <path fill="#00ffc3" fill-opacity="1" d="M0,96L60,122.7C120,149,240,203,360,218.7C480,235,600,213,720,197.3C840,181,960,171,1080,181.3C1200,192,1320,224,1380,240L1440,256L1440,0L0,0Z"></path>
+  </svg>
+</header>
+
+<section style="max-width: 900px; margin: 40px auto; padding: 30px 20px; background: rgba(255 255 255 / 0.07); border-radius: 20px; box-shadow: 0 0 30px #00ffc3a0;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #00ffc3; text-align: center;">💡 Що таке ІТ?</h2>
+  <p style="font-size: 1.4rem; line-height: 1.6; max-width: 700px; margin: 0 auto 25px; text-align: center; font-weight: 600;">
+    <strong>Інформаційні технології (ІТ)</strong> — це сфера, яка охоплює створення, обробку та захист інформації за допомогою компʼютерних систем.
+  </p>
+  <ul style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.8; list-style-position: inside; padding-left: 0; color: #00ffc3;">
+    <li>💻 Програмування</li>
+    <li>🌐 Веброзробку</li>
+    <li>🔒 Кібербезпеку</li>
+    <li>🧠 Штучний інтелект</li>
+    <li>📊 Аналітику даних</li>
+    <li>🤖 Мобільні застосунки</li>
+    <li>⚙️ DevOps</li>
+  </ul>
+</section>
+
+<section style="max-width: 900px; margin: 40px auto; padding: 30px 20px; background: rgba(255 255 255 / 0.07); border-radius: 20px; box-shadow: 0 0 30px #00ffc3a0;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #00ffc3; text-align: center;">📚 Курси</h2>
+  <ul style="font-size: 1.3rem; max-width: 700px; margin: 0 auto; line-height: 1.8; list-style-position: inside; padding-left: 0; color: #00ffc3;">
+    <li>🔤 HTML, CSS, адаптивна верстка</li>
+    <li>📜 JavaScript для початківців</li>
+    <li>🐍 Python: основи програмування</li>
+    <li>📱 Мобільні застосунки</li>
+    <li>🛡️ Кібербезпека</li>
+    <li>🧠 Штучний Інтелект</li>
+    <li>💾 SQL та бази даних</li>
+    <li>🌐 Git, GitHub та командна робота</li>
+  </ul>
+</section>
+<section>
+  <h2>📆 Розклад занять</h2>
+  <ul>
+    <li><strong>Пн:</strong> HTML + CSS</li>
+    <li><strong>Вт:</strong> JavaScript</li>
+    <li><strong>Ср:</strong> Python + Git</li>
+    <li><strong>Чт:</strong> SQL</li>
+    <li><strong>Пт:</strong> Кібербезпека / AI</li>
+  </ul>
+</section>
+
+<section>
+  <h2>📝 Форма реєстрації</h2>
+  <form id="registerForm">
+    <label>Імʼя:</label>
+    <input type="text" id="name" required>
+
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <label>Рівень знань:</label>
+    <select id="experience">
+      <option value="початківець">Початківець</option>
+      <option value="середній">Середній</option>
+      <option value="досвідчений">Досвідчений</option>
+    </select>
+
+    <label>Що вас цікавить?</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="topics" value="HTML"> HTML</label>
+      <label><input type="checkbox" name="topics" value="CSS"> CSS</label>
+      <label><input type="checkbox" name="topics" value="JavaScript"> JavaScript</label>
+      <label><input type="checkbox" name="topics" value="Python"> Python</label>
+      <label><input type="checkbox" name="topics" value="AI"> AI</label>
+      <label><input type="checkbox" name="topics" value="Cybersecurity"> Кібербезпека</label>
+      <label><input type="checkbox" name="topics" value="SQL"> SQL</label>
+    </div>
+
+    <label>Коментар або питання:</label>
+    <textarea id="comment" rows="3"></textarea>
+
+    <button type="submit">Зареєструватися</button>
+  </form>
+  <p id="result"></p>
+</section>
+<section style="background: #f5f5f5; padding: 40px 20px; font-family: 'Arial', sans-serif;">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 style="color: #333; font-size: 28px; margin-bottom: 15px;">👨‍💻 Про нас</h2>
+    <p style="color: #555; font-size: 18px; line-height: 1.6;">
+      Ми — команда ентузіастів у сфері <strong>інформаційних технологій</strong>, яка прагне зробити навчання ІТ доступним для всіх.
+      Наш сайт створений для того, щоб допомогти новачкам та досвідченим користувачам освоїти нові навички у <strong>веброзробці, програмуванні, кібербезпеці</strong> та багато іншому.
+    </p>
+    <p style="color: #555; font-size: 18px; line-height: 1.6; margin-top: 20px;">
+      Наша мета — надихати, навчати та відкривати світ сучасних технологій кожному, хто прагне розвиватись. Ми працюємо над якісним контентом, створюємо інтерактивні матеріали та підтримуємо своїх користувачів на кожному кроці.
+    </p>
+    <p style="margin-top: 30px;">
+      📍 Знаходимося у <strong>Львові</strong> | Працюємо онлайн по всій Україні
+    </p>
+  </div>
+</section>
+<section>
+  <h2>📱 Ми у соціальних мережах</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px;">
+    <a href="https://t.me/your_telegram" target="_blank" class="tooltip" data-tooltip="Telegram">
+      Telegram
+    </a>
+    <a href="viber://chat?number=%2B380XXXXXXXXX" class="tooltip" data-tooltip="Viber">
+      Viber
+    </a>
+    <a href="https://wa.me/380XXXXXXXXX" target="_blank" class="tooltip" data-tooltip="WhatsApp">
+      WhatsApp
+    </a>
+    <a href="https://www.tiktok.com/@your_tiktok" target="_blank" class="tooltip" data-tooltip="TikTok">
+      TikTok
+    </a>
+    <a href="https://www.instagram.com/your_instagram" target="_blank" class="tooltip" data-tooltip="Instagram">
+      Instagram
+    </a>
+  </div>
+</section>
+
+<style>
+  .tooltip {
+    position: relative;
+    background: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .tooltip:hover {
+    background: #0088cc;
+  }
+  /* Відступи між кнопками */
+  .tooltip:not(:last-child) {
+    margin-right: 10px;
+  }
+  /* Стиль підказки */
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 0.9em;
+    z-index: 10;
+  }
+  .tooltip:hover::after {
+    opacity: 1;
+  }
+</style>
+
+<footer>
+  &copy; 2025 Онлайн IT Навчання | Створено з кохання до іт
+</footer>
+
+<!-- 💡 Скрипти -->
+<script>
+  // Зірки
+  const starsContainer = document.getElementById("starsContainer");
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starsContainer.appendChild(star);
+  }
+
+  // Музика
+  function playMusic() {
+    const bg = document.getElementById("bgMusic");
+    bg.play().catch(() => {
+      alert("🔇 Ваш браузер блокує автозапуск звуку. Натисніть ще раз.");
+    });
+  }
+
+  // Натиснення кнопки
+  function playClick() {
+    const sound = document.getElementById("clickSound");
+    sound.play();
+  }
+
+  // Форма
+  const form = document.getElementById('registerForm');
+  const result = document.getElementById('result');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    playClick();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const experience = document.getElementById('experience').value;
+    const comment = document.getElementById('comment').value.trim();
+    const topics = [...document.querySelectorAll('input[name="topics"]:checked')]
+      .map(cb => cb.value).join(", ");
+
+    if (!name || !email) {
+      result.innerHTML = "❌ Заповніть обовʼязкові поля!";
+      result.style.color = "red";
+      return;
+    }
+
+    fetch("https://script.google.com/macros/s/AKfycbXYZ123ABC/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&experience=${encodeURIComponent(experience)}&topics=${encodeURIComponent(topics)}&comment=${encodeURIComponent(comment)}`
+    });
+
+    result.innerHTML = `✅ Дякуємо, ${name}! Ви зареєстровані.`;
+    result.style.color = "#00ffc3";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
