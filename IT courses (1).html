@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Старт в IT — Навчальний курс</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e1a2b;
+      color: white;
+    }
+
+    /* ✨ Анімація для header */
+    @keyframes fadeSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #007bff, #00ffc3);
+      animation: fadeSlideDown 1.5s ease-out forwards;
+      opacity: 0; /* Початково приховано */
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #000;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ffc3a0;
+    }
+
+    h2 {
+      color: #00ffc3;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .teachers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .teacher {
+      text-align: center;
+    }
+
+    .teacher img {
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      box-shadow: 0 0 10px #00ffc3a0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    input, button {
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+    }
+
+    input {
+      padding: 8px;
+      margin-top: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #00ffc3;
+      color: #000;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🚀 Твій Старт в ІТ</h1>
+  <p>Навчальний курс для початківців: легко, цікаво, безкоштовно</p>
+</header>
+
+<section>
+  <h2>🔍 Що ти вивчиш</h2>
+  <ul>
+    <li>🔤 <strong>HTML</strong> — створення структури сайту</li>
+    <li>🎨 <strong>CSS</strong> — оформлення та дизайн</li>
+    <li>🧠 <strong>JavaScript</strong> — додавання логіки</li>
+    <li>🐍 <strong>Python</strong> — універсальна мова для початківців</li>
+    <li>🔐 <strong>Кібербезпека</strong> — основи безпечного інтернету</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🎨 Що таке оформлення та дизайн сайту?</h2>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    Оформлення та дизайн сайту — це створення привабливого вигляду сторінки. 
+    Вони включають вибір кольорів, шрифтів, розташування елементів, зображень, кнопок та анімацій.
+    Мета — зробити сайт зручним, зрозумілим і естетично приємним для користувача.
+  </p>
+</section>
+
+<section>
+  <h2>🛡️ Що таке кібербезпека?</h2>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    <strong>Кібербезпека</strong> — це захист компʼютерів, даних, мереж та програм від атак, зламів, вірусів і крадіжок.
+    Вона допомагає забезпечити конфіденційність, цілісність та доступність інформації.
+    Ми навчаємо базовим принципам захисту: як уникнути шахраїв, не втратити паролі та користуватись інтернетом безпечно.
+  </p>
+</section>
+
+<section>
+  <h2>🔤 Що таке HTML?</h2>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    <strong>HTML (HyperText Markup Language)</strong> — це мова розмітки, яка створює структуру веб-сторінки.
+    Вона визначає, де буде заголовок, зображення, текст, кнопка тощо. Це «скелет» сайту.
+  </p>
+</section>
+
+<section>
+  <h2>🎨 Що таке CSS?</h2>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    <strong>CSS (Cascading Style Sheets)</strong> — це мова стилів, яка відповідає за вигляд сайту.
+    З її допомогою змінюють кольори, шрифти, розміри, розташування блоків, додають анімації. Це — «одяг» для HTML.
+  </p>
+</section>
+
+<section>
+  <h2>🧠 Що таке JavaScript?</h2>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    <strong>JavaScript</strong> — це мова програмування, яка додає «розум» сайту.
+    Вона дозволяє взаємодіяти з користувачем: натискати кнопки, відкривати меню, робити калькулятори, ігри, чати.
+  </p>
+</section>
+
+<section>
+  <h2>🐍 Що таке Python?</h2>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    <strong>Python</strong> — проста та потужна мова програмування. Підходить для новачків.
+    Її використовують для створення сайтів, ботів, ігор, штучного інтелекту, аналізу даних та автоматизації.
+  </p>
+</section>
+<section style="text-align: center; margin: 40px auto;">
+  <h2>🎨 Курс: Основи CSS</h2>
+  <p>Навчись стилізувати вебсторінки за допомогою CSS — від базових понять до створення адаптивного дизайну!</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📘 Зміст курсу:</h3>
+  <ul>
+    <li>Модуль 1: Основи CSS</li>
+    <li>Модуль 2: Кольори, шрифти та фон</li>
+    <li>Модуль 3: Верстка за допомогою Flexbox та Grid</li>
+    <li>Модуль 4: Адаптивність та медіа-запити</li>
+    <li>Модуль 5: Практика — створення власного дизайну</li>
+  </ul>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📥 Завантажити PDF</h3>
+  <p>Ознайомся з повною версією курсу у форматі PDF:</p>
+  <a href="https://github.com/Miha1996-mix/IT-student-training-/raw/main/Course%20on%20css.pdf" target="_blank" download style="color: #ffffff; background: #007acc; padding: 10px 20px; border-radius: 6px; text-decoration: none;">⬇️ Завантажити курс CSS (PDF)</a>
+</section>
+
+<section style="margin: 20px;">
+  <h3>👨‍🎓 Про студентів</h3>
+  <p>Цей курс розроблений спеціально для студентів, які тільки починають вивчення веброзробки. Ви навчитесь працювати з CSS на практиці, створюючи власні стилі для вебсторінок.</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📌 Переваги курсу:</h3>
+  <ul>
+    <li>Просте пояснення складних тем</li>
+    <li>Інтерактивні приклади</li>
+    <li>Покрокові інструкції</li>
+    <li>Підходить для новачків</li>
+  </ul>
+</section>
+<section style="text-align: center; margin: 40px auto;">
+  <h2>📄 Курс: Основи HTML</h2>
+  <p>Дізнайся, як створювати структуру вебсайтів за допомогою HTML — основної мови розмітки Інтернету!</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📘 Зміст курсу:</h3>
+  <ul>
+    <li>Модуль 1: Що таке HTML?</li>
+    <li>Модуль 2: Основні теги (текст, заголовки, посилання)</li>
+    <li>Модуль 3: Робота з зображеннями та відео</li>
+    <li>Модуль 4: Таблиці та списки</li>
+    <li>Модуль 5: Форми та введення даних</li>
+    <li>Модуль 6: Практика — створення власної HTML-сторінки</li>
+  </ul>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📥 Завантажити PDF</h3>
+  <p>Скачай повну версію курсу у форматі PDF для офлайн-навчання:</p>
+  <a href="https://github.com/Miha1996-mix/IT-student-training-/raw/main/Курс%20по%20Html.pdf" target="_blank" download style="color: #ffffff; background: #007acc; padding: 10px 20px; border-radius: 6px; text-decoration: none;">⬇️ Завантажити курс HTML (PDF)</a>
+</section>
+<section style="text-align: center; margin: 40px auto;">
+  <h2>🐍 Курс: Основи Python</h2>
+  <p>Опануй одну з найпопулярніших мов програмування з нуля — створюй скрипти, автоматизуй задачі та почни шлях у розробку!</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📘 Зміст курсу:</h3>
+  <ul>
+    <li>Модуль 1: Вступ до Python</li>
+    <li>Модуль 2: Змінні, типи даних та оператори</li>
+    <li>Модуль 3: Умовні конструкції та цикли</li>
+    <li>Модуль 4: Функції та модулі</li>
+    <li>Модуль 5: Робота з файлами</li>
+    <li>Модуль 6: Основи ООП (об'єктно-орієнтованого програмування)</li>
+    <li>Модуль 7: Практика — створення власної програми</li>
+  </ul>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📥 Завантажити PDF</h3>
+  <p>Завантажуй повну версію курсу Python у PDF-форматі та навчайся будь-де:</p>
+  <a href="https://github.com/Miha1996-mix/IT-student-training-/raw/main/Курс%20по%20python%20.pdf" target="_blank" download style="color: #ffffff; background: #007acc; padding: 10px 20px; border-radius: 6px; text-decoration: none;">⬇️ Завантажити курс Python (PDF)</a>
+</section>
+
+<section style="margin: 20px;">
+  <h3>👨‍💻 Кому підійде курс?</h3>
+  <p>Новачкам, студентам, майбутнім розробникам, всім, хто хоче автоматизувати завдання або створювати ІТ-рішення.</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>🎯 Що ти навчишся:</h3>
+  <ul>
+    <li>Писати чистий і зрозумілий код на Python</li>
+    <li>Створювати прості програми та утиліти</li>
+    <li>Розуміти основи ООП та структурування коду</li>
+    <li>Обробляти дані, працювати з файлами та бібліотеками</li>
+  </ul>
+</section>
+<section style="margin: 20px;">
+  <h3>🎓 Для кого цей курс?</h3>
+  <p>Курс підходить для новачків, студентів та всіх, хто хоче розпочати кар’єру у веброзробці. Без попереднього досвіду — від нуля до результату!</p>
+</section>
+<section style="margin: 20px;">
+  <h3>🔧 Що ви навчитесь?</h3>
+  <ul>
+    <li>Створювати базову HTML-структуру сайту</li>
+    <li>Працювати з різними тегами та атрибутами</li>
+    <li>Інтегрувати мультимедійний контент</li>
+    <li>Створювати інтерактивні форми</li>
+  </ul>
+</section>
+<section style="text-align: center; margin: 40px auto;">
+  <h2>🛡️ Курс: Основи Кібербезпеки</h2>
+  <p>Навчись захищати себе та свою інформацію у цифровому світі. Вивчай основи кіберзахисту, безпечного інтернету та атак.</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📘 Зміст курсу:</h3>
+  <ul>
+    <li>Модуль 1: Що таке кібербезпека?</li>
+    <li>Модуль 2: Основні типи кіберзагроз</li>
+    <li>Модуль 3: Захист персональних даних</li>
+    <li>Модуль 4: Шкідливе ПЗ: віруси, трояни, фішинг</li>
+    <li>Модуль 5: Безпечна робота з мережею та Wi-Fi</li>
+    <li>Модуль 6: Паролі, двофакторна автентифікація</li>
+    <li>Модуль 7: Практичні поради з кібергігієни</li>
+  </ul>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📥 Завантажити PDF</h3>
+  <p>Отримай повний курс у PDF-форматі для детального вивчення:</p>
+  <a href="https://github.com/Miha1996-mix/IT-student-training-/raw/main/Курс%20по%20Кибербезопасности.pdf" target="_blank" download style="color: #ffffff; background: #007acc; padding: 10px 20px; border-radius: 6px; text-decoration: none;">⬇️ Завантажити курс Кібербезпеки (PDF)</a>
+</section>
+
+<section style="margin: 20px;">
+  <h3>🎓 Кому підійде курс?</h3>
+  <p>Для студентів, викладачів, працівників офісів, школярів і всіх, хто користується Інтернетом і хоче захистити свої дані.</p>
+</section>
+<section style="margin: 20px;">
+  <h3>🔒 Що ти навчишся:</h3>
+  <ul>
+    <li>Розпізнавати основні загрози у мережі</li>
+    <li>Захищати свій комп’ютер і смартфон</li>
+    <li>Розуміти методи зловмисників</li>
+    <li>Використовувати надійні паролі та інструменти захисту</li>
+  </ul>
+</section>
+<section style="text-align: center; margin: 40px auto;">
+  <h2>📱 Курс: Основи Андроїд розробки</h2>
+  <p>Вивчай, як створювати мобільні додатки для Android — від ідеї до запуску в Google Play!</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📘 Зміст курсу:</h3>
+  <ul>
+    <li>Модуль 1: Що таке Android і як працює система</li>
+    <li>Модуль 2: Встановлення середовища розробки (Android Studio)</li>
+    <li>Модуль 3: Основи мови Kotlin / Java для Android</li>
+    <li>Модуль 4: Створення інтерфейсу користувача (UI)</li>
+    <li>Модуль 5: Обробка подій та навігація</li>
+    <li>Модуль 6: Робота з базами даних (SQLite, Room)</li>
+    <li>Модуль 7: Публікація додатків у Google Play</li>
+  </ul>
+</section>
+
+<section style="margin: 20px;">
+  <h3>📥 Завантажити PDF</h3>
+  <p>Отримай повну інструкцію для старту в Android-розробці у PDF-форматі:</p>
+  <a href="https://github.com/Miha1996-mix/IT-student-training-/raw/main/Курс%20по%20Андроїд%20розробки%20.pdf" target="_blank" download style="color: #ffffff; background: #007acc; padding: 10px 20px; border-radius: 6px; text-decoration: none;">⬇️ Завантажити курс Андроїд розробки (PDF)</a>
+</section>
+
+<section style="margin: 20px;">
+  <h3>👨‍💻 Для кого цей курс?</h3>
+  <p>Для початківців, студентів, а також всіх, хто хоче створювати власні мобільні додатки.</p>
+</section>
+
+<section style="margin: 20px;">
+  <h3>🚀 Що ти навчишся:</h3>
+  <ul>
+    <li>Працювати з Android Studio</li>
+    <li>Створювати додатки на Kotlin або Java</li>
+    <li>Працювати з елементами інтерфейсу</li>
+    <li>Тестувати та публікувати додатки в Google Play</li>
+  </ul>
+</section>
+<section>
+  <h2>👨‍🏫 Наші викладачі</h2>
+  <div class="teachers">
+    <div class="teacher">
+      <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&h=130" alt="Іван">
+      <p><strong>Іван Кодер</strong><br>HTML / CSS</p>
+    </div>
+    <div class="teacher">
+      <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&h=130" alt="Ольга">
+      <p><strong>Ольга Python</strong><br>Python / Кібербезпека</p>
+    </div>
+    <div class="teacher">
+      <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&h=130" alt="Максим">
+      <p><strong>Максим JS</strong><br>JavaScript</p>
+    </div>
+    <div class="teacher">
+      <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&h=130" alt="Татьяна">
+      <p><strong>Татьяна Android</strong><br>Android розробка</p>
+    </div>
+   <div class="teacher">
+  <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&h=130" alt="Андрій AI">
+  <p><strong>Андрій AI</strong><br>Штучний інтелект / Machine Learning</p>
+</div>
+
+<section>
+  <h2>📆 Формат навчання</h2>
+  <ul>
+    <li>🕒 3-4 години на тиждень</li>
+    <li>🌐 Онлайн-платформа доступна з телефону</li>
+    <li>📁 Матеріали, тести, практика</li>
+    <li>📞 Підтримка від викладачів у Telegram</li>
+  </ul>
+</section>
+
+<section>
+  <h2>📝 Реєстрація</h2>
+  <p style="text-align: center;">Щоб розпочати — просто заповни форму нижче:</p>
+  <form style="max-width: 500px; margin: auto; text-align: left;">
+    <label>Імʼя:</label><br>
+    <input type="text" required style="width: 100%;"><br><br>
+    <label>Email:</label><br>
+    <input type="email" required style="width: 100%;"><br><br>
+    <button type="submit">Розпочати навчання</button>
+  </form>
+</section>
+  <div id="footerMenu" aria-hidden="true">
+    <a href="https://t.me/yourusername" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+<style>
+  /* Контейнер футера */
+  #floatingFooter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00ffc3aa;
+    color: #ccc;
+    font-size: 1rem;
+    padding: 10px;
+    z-index: 10000;
+    user-select: none;
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+  }
+
+  /* Кнопка меню */
+  #toggleBtn {
+    background: #00ffc3;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 1.1rem;
+  }
+
+  /* Блок з меню соцмереж */
+  #footerMenu {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Іконки соцмереж */
+  #footerMenu a {
+    color: #00ffc3;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+  }
+  #footerMenu a:hover {
+    color: #00a884;
+  }
+
+  /* Коли меню відкрите */
+  #floatingFooter.open {
+    width: 220px;
+  }
+  #floatingFooter.open #footerMenu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<!-- Font Awesome -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-wxkIBzZYLYZ/iyFCDpLk3bqCWNI25m7SMHXGsd1EccLqITcED3On8lGmw7dN8z3x9v3t3BrqRz9fH2zHzo4EBg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<script>
+  const toggleBtn = document.getElementById('toggleBtn');
+  const floatingFooter = document.getElementById('floatingFooter');
+  const footerMenu = document.getElementById('footerMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    floatingFooter.classList.toggle('open');
+    const isOpen = floatingFooter.classList.contains('open');
+
+    // Для доступності (ARIA)
+    toggleBtn.setAttribute('aria-expanded', isOpen);
+    footerMenu.setAttribute('aria-hidden', !isOpen);
+  });
+</script>
+<footer style="text-align: center; padding: 20px; background-color: #0e1a2b; color: white;">
+  &copy; 2025 Старт в ІТ | Навчайся безкоштовно та зручно з будь-якої точки України 🌍<br>
+  📩 Зв'язок: <a href="mailto:miha1000t@gmail.com" style="color: #4da6ff;">miha1000t@gmail.com</a>
+</footer>
+</body>
+</html>
