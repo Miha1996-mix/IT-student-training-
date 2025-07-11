@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VapeShop – Вейп Магазин</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://images.pexels.com/photos/3545426/pexels-photo-3545426.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      backdrop-filter: blur(4px);
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      color: #00ffe7;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 20px #00ffe7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 0.7rem;
+    }
+
+    nav a {
+      color: #00ffe7;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00c8;
+      text-shadow: 0 0 5px #ff00c8;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background: rgba(31, 31, 31, 0.9);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 255, 231, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1rem;
+    }
+
+    .product-info h4 {
+      margin: 0 0 0.5rem;
+      color: #00ffe7;
+    }
+
+    .price {
+      color: #ff00c8;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .desc {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 0.5rem 0;
+    }
+
+    button {
+      background-color: #ff00c8;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #00ffe7;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffe7;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VapeShop</h1>
+    <p>Все для сучасного вейпера</p>
+  </header>
+
+  <nav>
+    <a href="#products">Товари</a>
+    <a href="#contact">Контакти</a>
+  </nav>
+
+  <div class="container" id="products">
+    <h2>Наші товари</h2>
+    <div class="products">
+      <div class="product">
+<img src="https://images.pexels.com/photos/12721921/pexels-photo-12721921.jpeg" alt="LORE PRIME IJUST D20">
+        <div class="product-info">
+          <h4>Електронний Вейп</h4>
+          <p class="desc"></p>LORE PRIME IJUST D20
+          <p class="price">850 ₴</p>
+          <button onclick="addToCart('Електронний Вейп')">У кошик</button>
+        </div>
+      </div>
+
+     <div class="product">
+  <img src="https://images.pexels.com/photos/17962164/pexels-photo-17962164.jpeg" alt="Voopod Vtnru (Pro)">
+  <div class="product-info">
+    <h4>Voopod Vtnru (Pro)</h4>
+    <p class="desc">Потужний POD-система на 1000 затяжок. Змінний картридж, стильний дизайн, зарядка USB-C.</p>
+    <p class="price">900 ₴</p>
+    <button onclick="addToCart('Voopod Vtnru (Pro)')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/17962160/pexels-photo-17962160.jpeg" alt="Voopod Box Edition">
+  <div class="product-info">
+    <h4>Voopod Box Edition</h4>
+    <p class="desc">Оригінальна упаковка POD-системи Voopod. Комплектація: пристрій, зарядний кабель, картридж, інструкція.</p>
+    <p class="price">950 ₴</p>
+    <button onclick="addToCart('Voopod Box Edition')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/11587602/pexels-photo-11587602.jpeg" alt="Logic Compact">
+  <div class="product-info">
+    <h4>Logic Compact</h4>
+    <p class="desc">Компактна POD-система з магнітним картриджем. Зарядка USB, стильний дизайн, до 350 затяжок.</p>
+    <p class="price">790 ₴</p>
+    <button onclick="addToCart('Logic Compact')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/17962162/pexels-photo-17962162.jpeg" alt="GENE Pod Device">
+  <div class="product-info">
+    <h4>GENE Pod Device</h4>
+    <p class="desc">Інноваційна POD-система GENE з фірмовим чіпсетом. Швидкий нагрів, стильний дизайн, USB-C зарядка.</p>
+    <p class="price">990 ₴</p>
+    <button onclick="addToCart('GENE Pod Device')">У кошик</button>
+  </div>
+</div>
+<div class="product">
+  <img src="https://images.pexels.com/photos/19344605/pexels-photo-19344605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Електронний вейп-девайс">
+  <div class="product-info">
+    <h4>Вейп-девайс 'SteamBox X'</h4>
+    <p class="desc">Потужний вейп із регульованою тягою, зручним дизайном та акумулятором 2500 mAh. Підтримка змінних баків. Ідеально підходить для щоденного паріння.</p>
+    <p class="price">1 499 ₴</p>
+    <button onclick="addToCart('Вейп-девайс \'SteamBox X\'')">У кошик</button>
+  </div>
+</div>
+<div class="product">
+  <img src="https://images.pexels.com/photos/7398925/pexels-photo-7398925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Вейп пристрій у стилі мінімал">
+  <div class="product-info">
+    <h4>Вейп-девайс 'Minimal V40'</h4>
+    <p class="desc">Стильний вейп у металевому корпусі. Ємність акумулятора 1500 mAh, змінний картридж, захист від перегріву. Ідеально для тих, хто шукає баланс стилю та функціональності.</p>
+    <p class="price">1 199 ₴</p>
+    <button onclick="addToCart('Вейп-девайс \'Minimal V40\'')">У кошик</button>
+  </div>
+</div>
+<div class="product">
+  <img src="https://images.pexels.com/photos/5387722/pexels-photo-5387722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Вейп з регулюванням потужності">
+  <div class="product-info">
+    <h4>Вейп-мод 'PowerMax 65W'</h4>
+    <p class="desc">Потужний вейп-мод із регулюванням до 65 Ватт, OLED-дисплеєм та численними режимами. Вбудований акумулятор 3000 mAh, швидка зарядка USB-C.</p>
+    <p class="price">3 299 ₴</p>
+    <button onclick="addToCart('Вейп-мод \'PowerMax 65W\'')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/19901858/pexels-photo-19901858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Вейп Drag V40 зі змінними батареями">
+  <div class="product-info">
+    <h4>Вейп Drag V40</h4>
+    <p class="desc">Потужний вейп з підтримкою змінних батарей 1500, регулюванням потужності до 80 Вт і стильним дизайном. Ідеальний вибір для досвідчених парильників.</p>
+    <p class="price">2 599 ₴</p>
+    <button onclick="addToCart('Вейп Drag V40')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/4030818/pexels-photo-4030818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Стильний вейп на фоні">
+  <div class="product-info">
+    <h4>Вейп-девайс 'NeoSmoke Mini'</h4>
+    <p class="desc">Компактний і зручний вейп з гарним дизайном. Ємність батареї 1000 mAh, картридж 2 мл, швидка зарядка. Ідеальний для подорожей і щоденного використання.</p>
+    <p class="price">1 199 ₴</p>
+    <button onclick="addToCart('Вейп-девайс \'NeoSmoke Mini\'')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/23319709/pexels-photo-23319709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Жижка для вейпа">
+  <div class="product-info">
+    <h4>Жижка 'Тропічний Мікс'</h4>
+    <p class="desc">Насичений смак екзотичних фруктів з легкою прохолодою. Співвідношення VG/PG: 70/30. Об'єм 50 мл.</p>
+    <p class="price">350 ₴</p>
+    <button onclick="addToCart('Жижка \'Тропічний Мікс\'')">У кошик</button>
+  </div>
+</div>
+<div class="product">
+  <img src="https://images.pexels.com/photos/23319716/pexels-photo-23319716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Жижка для вейпа">
+  <div class="product-info">
+    <h4>Жижка 'Ягідний Вибух'</h4>
+    <p class="desc">Соковитий мікс чорниці, малини та полуниці з легким холодком. Співвідношення VG/PG: 70/30. Об'єм 50 мл.</p>
+    <p class="price">350 ₴</p>
+    <button onclick="addToCart('Жижка \'Ягідний Вибух\'')">У кошик</button>
+  </div>
+</div>
+<div class="product">
+  <img src="https://images.pexels.com/photos/23319715/pexels-photo-23319715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Жижка для вейпа">
+  <div class="product-info">
+    <h4>Жижка 'Солодкий Ананас'</h4>
+    <p class="desc">Смак ананасу. Співвідношення VG/PG: 70/30. Об'єм 50 мл.</p>
+    <p class="price">350 ₴</p>
+    <button onclick="addToCart('Жижка \'Солодкий Ананас\'')">У кошик</button>
+  </div>
+</div>
+
+<div class="product">
+  <img src="https://images.pexels.com/photos/12345382/pexels-photo-12345382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Рідина для POD-систем">
+  <div class="product-info">
+    <h4>Рідина для POD-систем 'Mint Breeze'</h4>
+    <p class="desc">Свіжий м’ятний смак з легким холодком, ідеально підходить для POD-систем. Співвідношення VG/PG: 50/50. Об'єм 30 мл.</p>
+    <p class="price">250 ₴</p>
+    <button onclick="addToCart('Рідина для POD-систем \'Mint Breeze\'')">У кошик</button>
+  </div>
+</div>
+
+</style>
+<section id="juice-selection" class="container">
+  <h2>Вибір Жижки</h2>
+  <form onsubmit="event.preventDefault(); addJuiceToCart();">
+    <label for="flavor">Аромат:</label>
+    <select id="flavor" required>
+      <option value="">-- Оберіть --</option>
+      <option value="Манго Ice">Манго Ice</option>
+      <option value="Кола Fresh">Кола Fresh</option>
+      <option value="Мʼята Chill">Мʼята Chill</option>
+      <option value="Полуниця Milk">Полуниця Milk</option>
+    </select>
+
+    <br><br>
+
+    <label for="size">Обʼєм:</label>
+    <select id="size" required>
+      <option value="">-- Оберіть --</option>
+      <option value="30мл">30 мл</option>
+      <option value="50мл">50 мл</option>
+    </select>
+
+    <br><br>
+
+    <p style="color: lime; font-weight: bold;">✅ В наявності</p>
+
+    <button type="submit">Додати в кошик</button>
+  </form>
+</section>
+<!-- Контакти -->
+<div class="container" id="contact">
+  <h2>Контакти</h2>
+  <p>
+    Зв’яжіться з нами:<br>
+    Email: <a href="mailto:vape@shop.ua">vape@shop.ua</a><br>
+    Телефон: <a href="tel:+380671234567">+380 67 123 4567</a>
+  </p>
+</div>
+<section class="reviews">
+  <h2>Відгуки клієнтів</h2>
+
+  <div class="review">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Андрій" class="avatar">
+    <div class="review-content">
+      <p class="name">Андрій, 22 роки</p>
+      <p class="stars">★★★★★</p>
+      <p class="text">«Солодкий Ананас» – це просто вибух смаку! Парю щодня, дуже соковитий і приємний.</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Олег" class="avatar">
+    <div class="review-content">
+      <p class="name">Олег, 27 років</p>
+      <p class="stars">★★★★☆</p>
+      <p class="text">Мені зайшов «Тропічний Мікс» – манго і маракуя відчуваються чітко. Ідеально на літо!</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Владислав" class="avatar">
+    <div class="review-content">
+      <p class="name">Владислав, 19 років</p>
+      <p class="stars">★★★★★</p>
+      <p class="text">Замовляв «Ягідний Вибух». Дуже насичений ягідний аромат, не нудить, приємний післясмак.</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Марія" class="avatar">
+    <div class="review-content">
+      <p class="name">Марія, 25 років</p>
+      <p class="stars">★★★★★</p>
+      <p class="text">Нарешті знайшла жижку, яка мені підходить! «Солодкий Ананас» – мій фаворит.</p>
+    </div>
+  </div>
+</section>
+<!-- Соцмережі -->
+<div class="social-section" id="social">
+  <h2>Ми в соцмережах</h2>
+  <div class="social-icons">
+    <a href="https://t.me/vapeshop_ua" target="_blank" title="Telegram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+    </a>
+    <a href="https://www.instagram.com/vapeshop_ua" target="_blank" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.tiktok.com/@vapeshop_ua" target="_blank" title="TikTok">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+    </a>
+  </div>
+</div>
+
+<!-- CSS стилі (встав у <style> або окремий CSS-файл) -->
+<style>
+  .container#contact {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ccc;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #00ffe7;
+    border-bottom: 1px solid #00ffe7;
+  }
+
+  .container#contact h2 {
+    color: #00ffe7;
+    text-shadow: 0 0 5px #00ffe7;
+    margin-bottom: 1rem;
+  }
+
+  .container#contact a {
+    color: #ff00c8;
+    text-decoration: none;
+  }
+
+  .container#contact a:hover {
+    text-decoration: underline;
+  }
+
+  .social-section {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 1px solid #00ffe7;
+    border-bottom: 1px solid #00ffe7;
+  }
+
+  .social-section h2 {
+    color: #00ffe7;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px #00ffe7;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .social-icons a img {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 5px #00ffe7);
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  .social-icons a:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #ff00c8);
+  }
+</style>
+  <footer>
+    &copy; 2025 VapeShop. Всі права захищені.
+  </footer>
+
+  <script>
+    function addToCart(productName) {
+      alert(`✅ ${productName} додано до кошика!`);
+    }
+  </script>
+</body>
+</html>
