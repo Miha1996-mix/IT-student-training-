@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математична школа - Набір на навчання</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff6b6b;
+            --accent-color: #4ecdc4;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        
+        nav ul li a:hover {
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+/* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 4rem;
+        }
+        
+        .guarantee {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        
+        .guarantee strong {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .pricing-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .highlight {
+            background-color: rgba(74, 107, 255, 0.1) !important;
+            font-weight: 600;
+        }
+        
+        .economy {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            color: var(--text-light);
+            margin-right: 10px;
+        }
+        
+        .price-new {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+/* Schedule Section */
+.schedule-section {
+    margin-bottom: 4rem;
+    overflow-x: auto; /* Добавляем горизонтальную прокрутку при необходимости */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #e9ecef;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 0 5px 10px;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow-x: auto; /* Добавляем прокрутку для таблицы */
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Минимальная ширина таблицы */
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-table th {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 400px) {
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .tab-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+       }
+        /* Teachers Section */
+        .teachers-section {
+            margin-bottom: 4rem;
+        }
+        
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .teacher-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .teacher-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .teacher-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .teacher-card:hover .teacher-img img {
+            transform: scale(1.1);
+        }
+        
+        .teacher-info {
+            padding: 1.5rem;
+        }
+        
+        .teacher-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .teacher-subject {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .teacher-bio {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .teacher-social {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .teacher-social a {
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        
+        .teacher-social a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Curriculum Section */
+        .curriculum-section {
+            margin-bottom: 4rem;
+        }
+        
+        .accordion {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .accordion-header {
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: #e9ecef;
+        }
+        
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            padding: 1.5rem;
+            max-height: 1000px;
+        }
+        
+        .accordion-content ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+        
+        .accordion-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Slider Section */
+        .slider-section {
+            margin-bottom: 4rem;
+        }
+        
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .slide-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+               .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        
+        .slider-nav button {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .slider-nav button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            margin-bottom: 4rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(74, 107, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-col p {
+            margin-bottom: 1rem;
+            color: #adb5bd;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact-item i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .slide img {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem 0.5rem;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slide img {
+                height: 300px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .pricing-section {
+                padding: 2rem 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide img {
+                height: 250px;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-square-root-alt"></i>
+                <span>MathPro</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#pricing">Ціни</a></li>
+                    <li><a href="#schedule">Розклад</a></li>
+                    <li><a href="#teachers">Викладачі</a></li>
+                    <li><a href="#curriculum">Програма</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ЗАВЕРШУЄТЬСЯ НАБІР НА НАВЧАННЯ!</h1>
+            <p>Дитина гарантовано зрозуміє математику - або будемо навчати її <strong>БЕЗКОШТОВНО!</strong></p>
+            <div>
+                <a href="#pricing" class="btn">Дізнатись ціни</a>
+                <a href="#contact" class="btn btn-outline">Записатись на урок</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наші ціни</h2>
+                </div>
+                <div class="guarantee">
+                    Ми настільки впевнені у якості нашого навчання, що якщо ваша дитина не зрозуміє математику - ми продовжимо навчання <strong>БЕЗКОШТОВНО!</strong>
+                </div>
+                <table class="pricing-table">
+                    <tr>
+                        <th>Пакет</th>
+                        <th>Ціна</th>
+                    </tr>
+                    <tr>
+                        <td>12 уроків</td>
+                        <td><span class="price-old">515 грн/урок</span> <span class="price-new">400 грн/урок</span></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Економія</td>
+                        <td class="economy">1380 грн</td>
+                    </tr>
+                    <tr>
+                        <td>24 уроки</td>
+                        <td><span class="price-old">515 грн/урок</span> <span class="price-new">351 грн/урок</span></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Економія</td>
+                        <td class="economy">3936 грн</td>
+                    </tr>
+                    <tr>
+                        <td>48 уроків</td>
+                        <td><span class="price-old">515 грн/урок</span> <span class="price-new">316 грн/урок</span></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Економія</td>
+                        <td class="economy">9552 грн</td>
+                    </tr>
+                    <tr>
+                        <td>72 уроки</td>
+                        <td><span class="price-old">515 грн/урок</span> <span class="price-new">300 грн/урок</span></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Економія</td>
+                        <td class="economy">15 480 грн</td>
+                    </tr>
+                </table>
+                <div style="text-align: center;">
+                    <a href="#contact" class="btn">Записатись на безкоштовний урок</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="schedule-section" id="schedule">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Розклад занять</h2>
+                </div>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="junior">Молодші класи</button>
+                    <button class="tab-btn" data-tab="middle">Середні класи</button>
+                    <button class="tab-btn" data-tab="senior">Старші класи</button>
+                </div>
+                <div class="tab-content active" id="junior-tab">
+                    <table class="schedule-table">
+                        <tr>
+                            <th>День</th>
+                            <th>Час</th>
+                            <th>Клас</th>
+                            <th>Викладач</th>
+                        </tr>
+                        <tr>
+                            <td>Понеділок</td>
+                            <td>14:00-15:00</td>
+                            <td>1-2 клас</td>
+                            <td>Іваненко О.І.</td>
+                        </tr>
+                        <tr>
+                            <td>Середа</td>
+                            <td>14:00-15:00</td>
+                            <td>1-2 клас</td>
+                            <td>Іваненко О.І.</td>
+                        </tr>
+                        <tr>
+                            <td>П'ятниця</td>
+                            <td>14:00-15:00</td>
+                            <td>1-2 клас</td>
+                            <td>Іваненко О.І.</td>
+                        </tr>
+                        <tr>
+                            <td>Вівторок</td>
+                            <td>15:30-16:30</td>
+                            <td>3-4 клас</td>
+                            <td>Петренко М.В.</td>
+                        </tr>
+                        <tr>
+                            <td>Четвер</td>
+                            <td>15:30-16:30</td>
+                            <td>3-4 клас</td>
+                            <td>Петренко М.В.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-content" id="middle-tab">
+                    <table class="schedule-table">
+                        <tr>
+                            <th>День</th>
+                            <th>Час</th>
+                            <th>Клас</th>
+                            <th>Викладач</th>
+                        </tr>
+                        <tr>
+                            <td>Понеділок</td>
+                            <td>16:00-17:30</td>
+                            <td>5-6 клас</td>
+                            <td>Сидоренко В.П.</td>
+                        </tr>
+                        <tr>
+                            <td>Середа</td>
+                            <td>16:00-17:30</td>
+                            <td>5-6 клас</td>
+                            <td>Сидоренко В.П.</td>
+                        </tr>
+                        <tr>
+                            <td>Вівторок</td>
+                            <td>17:00-18:30</td>
+                            <td>7-8 клас</td>
+                            <td>Коваленко І.О.</td>
+                        </tr>
+                        <tr>
+                            <td>Четвер</td>
+                            <td>17:00-18:30</td>
+                            <td>7-8 клас</td>
+                            <td>Коваленко І.О.</td>
+                        </tr>
+                    </table>
+                </div>
+               <div class="tab-content" id="senior-tab">
+                    <table class="schedule-table">
+                        <tr>
+                            <th>День</th>
+                            <th>Час</th>
+                            <th>Клас</th>
+                            <th>Викладач</th>
+                        </tr>
+                        <tr>
+                            <td>Понеділок</td>
+                            <td>18:00-19:30</td>
+                            <td>9 клас</td>
+                            <td>Мельник Т.В.</td>
+                        </tr>
+                        <tr>
+                            <td>Середа</td>
+                            <td>18:00-19:30</td>
+                            <td>9 клас</td>
+                            <td>Мельник Т.В.</td>
+                        </tr>
+                        <tr>
+                            <td>Вівторок</td>
+                            <td>18:30-20:00</td>
+                            <td>10-11 клас</td>
+                            <td>Шевченко О.П.</td>
+                        </tr>
+                        <tr>
+                            <td>Четвер</td>
+                            <td>18:30-20:00</td>
+                            <td>10-11 клас</td>
+                            <td>Шевченко О.П.</td>
+                        </tr>
+                        <tr>
+                            <td>Субота</td>
+                            <td>10:00-13:00</td>
+                            <td>Підготовка до ЗНО</td>
+                            <td>Шевченко О.П.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teachers Section -->
+        <section class="teachers-section" id="teachers">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наші викладачі</h2>
+                </div>
+                <div class="teachers-grid">
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Іваненко Ольга Іванівна">
+                        </div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">Іваненко Ольга Іванівна</h3>
+                            <span class="teacher-subject">Молодші класи (1-4)</span>
+                            <p class="teacher-bio">Досвід роботи з дітьми молодшого шкільного віку - 15 років. Спеціалізується на інтерактивних методах навчання.</p>
+                            <div class="teacher-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Петренко Михайло Васильович">
+                        </div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">Петренко Михайло Васильович</h3>
+                            <span class="teacher-subject">Молодші класи (3-4)</span>
+                            <p class="teacher-bio">Автор власної методики навчання математики для дітей. Допомагає дітям подолати страх перед математикою.</p>
+                            <div class="teacher-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Сидоренко Віктор Петрович">
+                        </div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">Сидоренко Віктор Петрович</h3>
+                            <span class="teacher-subject">Середні класи (5-6)</span>
+                            <p class="teacher-bio">Кандидат педагогічних наук. Розробив унікальну систему пояснення складних тем простими словами.</p>
+                            <div class="teacher-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1542190891-2093d38760f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Коваленко Ірина Олександрівна">
+                        </div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">Коваленко Ірина Олександрівна</h3>
+                            <span class="teacher-subject">Середні класи (7-8)</span>
+                            <p class="teacher-bio">Спеціаліст з алгебри та геометрії. Допомагає учням розвинути логічне мислення та аналітичні здібності.</p>
+                            <div class="teacher-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Мельник Тетяна Володимирівна">
+                        </div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">Мельник Тетяна Володимирівна</h3>
+                            <span class="teacher-subject">Старші класи (9)</span>
+                            <p class="teacher-bio">Експерт з підготовки до ДПА. Її учні регулярно отримують високі бали на державній атестації.</p>
+                            <div class="teacher-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Шевченко Олег Петрович">
+                        </div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">Шевченко Олег Петрович</h3>
+                            <span class="teacher-subject">Старші класи (10-11) та ЗНО</span>
+                            <p class="teacher-bio">Експерт з підготовки до ЗНО. За останні 5 років його учні в середньому отримують 180+ балів з математики.</p>
+                            <div class="teacher-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   <!-- Curriculum Section -->
+        <section class="curriculum-section" id="curriculum">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Програма навчання</h2>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Молодші класи (1-4)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Основи арифметики: додавання, віднімання, множення, ділення</li>
+                                <li>Робота з дробами та десятковими числами</li>
+                                <li>Геометричні фігури та їх властивості</li>
+                                <li>Розв'язування текстових задач</li>
+                                <li>Розвиток логічного мислення через математичні ігри</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Середні класи (5-8)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Поглиблене вивчення алгебри та геометрії</li>
+                                <li>Рівняння та нерівності</li>
+                                <li>Системи рівнянь</li>
+                                <li>Функції та їх графіки</li>
+                                <li>Теорема Піфагора та її застосування</li>
+                                <li>Елементи комбінаторики та теорії ймовірностей</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Старші класи (9-11) та підготовка до ЗНО</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Тригонометрія та її застосування</li>
+                                <li>Похідні та їх застосування</li>
+                                <li>Інтеграли та площі фігур</li>
+                                <li>Стереометрія: об'єми та площі поверхонь</li>
+                                <li>Комплексні числа</li>
+                                <li>Повний курс підготовки до ЗНО з розбором усіх типів завдань</li>
+                                <li>Розв'язування олімпіадних задач підвищеної складності</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider Section -->
+        <section class="slider-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наші заняття</h2>
+                </div>
+                <div class="slider-container">
+                    <div class="slider" id="slider">
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Заняття в класі">
+                            <div class="slide-caption">
+                                <h3>Інтерактивні заняття</h3>
+                                <p>Наші уроки проходять у дружній атмосфері з використанням сучасних методів навчання</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Індивідуальний підхід">
+                            <div class="slide-caption">
+                                <h3>Індивідуальний підхід</h3>
+                                <p>Кожен учень отримує персональну увагу та підтримку від наших викладачів</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Сучасні технології">
+                            <div class="slide-caption">
+                                <h3>Сучасні технології</h3>
+                                <p>Використовуємо інтерактивні дошки, освітні програми та онлайн-ресурси</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Підготовка до ЗНО">
+                            <div class="slide-caption">
+                                <h3>Ефективна підготовка до ЗНО</h3>
+                                <p>Наші учні регулярно отримують високі бали на зовнішньому незалежному оцінюванні</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="slider-dots" id="sliderDots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Відгуки наших учнів та батьків</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>Мій син ніколи не любив математику, але після кількох місяців занять у MathPro він не тільки підтягнув оцінки, а й почав отримувати задоволення від розв'язування задач. Дякую команді за індивідуальний підхід!</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Олена Коваль">
+                            </div>
+                            <div class="author-info">
+                                <h4>Олена Коваль</h4>
+                                <p>Мама учня 4 класу</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>Підготовка до ЗНО з MathPro - це найкраще рішення, яке ми могли прийняти. Дочка отримала 195 балів з математики і вступила на бюджет! Викладачі не просто навчають, а прищеплюють любов до предмету.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Ірина Петренко">
+                            </div>
+                            <div class="author-info">
+                                <h4>Ірина Петренко</h4>
+                                <p>Мама абітурієнтки</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>Я ніколи не розумів алгебру, але після занять з Віктором Петровичем все стало на свої місця. Тепер я один з найкращих у класі з математики! Рекомендую всім, хто хоче дійсно зрозуміти предмет.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Максим Сидоренко">
+                            </div>
+                            <div class="author-info">
+                                <h4>Максим Сидоренко</h4>
+                                <p>Учень 8 класу</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Готові почати навчання?</h2>
+                    <p>Запишіться на безкоштовний пробний урок вже сьогодні та дайте своїй дитині шанс полюбити математику!</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn">Записатись на урок</a>
+                        <a href="tel:+380123456789" class="btn btn-outline">Зателефонувати нам</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Про нас</h3>
+                    <p>MathPro - це сучасна школа математики, де кожен учень отримує індивідуальний підхід та гарантований результат.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Навігація</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Головна</a></li>
+                        <li><a href="#pricing">Ціни</a></li>
+                        <li><a href="#schedule">Розклад</a></li>
+                        <li><a href="#teachers">Викладачі</a></li>
+                        <li><a href="#curriculum">Програма</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакти</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>м. Київ, вул. Математична, 15</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+38 (012) 345-67-89</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@mathpro.ua</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Пн-Пт: 9:00-20:00<br>Сб-Нд: 10:00-18:00</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Підписатись на новини</h3>
+                    <p>Отримуйте корисні матеріали та інформацію про акції</p>
+                    <form id="newsletterForm" style="margin-top: 1rem;">
+                        <input type="email" placeholder="Ваш email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 0.5rem;">
+                        <button type="submit" class="btn" style="width: 100%; padding: 0.8rem;">Підписатись</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MathPro. Усі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Tab System
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Accordion
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                const accordionContent = header.nextElementSibling;
+                
+                // Close all other accordion items
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    if (item !== accordionItem) {
+                        item.querySelector('.accordion-header').classList.remove('active');
+                        item.querySelector('.accordion-content').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current accordion item
+                header.classList.toggle('active');
+                accordionContent.classList.toggle('active');
+            });
+        });
+        
+        // Slider
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const sliderDots = document.getElementById('sliderDots');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        
+        // Create dots
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            sliderDots.appendChild(dot);
+        });
+        
+        // Update slider position
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            currentSlide = index;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            updateSlider();
+        }
+        
+        // Next slide
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            updateSlider();
+        }
+        
+        // Previous slide
+        function prevSlide() {
+            currentSlide--;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            updateSlider();
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Auto slide
+        setInterval(nextSlide, 5000);
+        
+        // Newsletter Form
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            // Here you would typically send the email to your server
+            alert(`Дякуємо за підписку! На адресу ${email} буде надіслано листа з підтвердженням.`);
+            newsletterForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
