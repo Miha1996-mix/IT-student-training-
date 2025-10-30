@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Узбецька  Кухня  — смак, який рухається разом із тобою!</title>
+    <meta name="description" content="Справжня халяльна вулична їжа у Києві. Плов, самса, люля-кебаб та інші традиційні страви з Таджикистану.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <style>
+        :root {
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --green: #2E8B57;
+            --black: #1A1A1A;
+            --light-bg: #F8F8F8;
+            --text: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0.5rem auto;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--green);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: var(--gold);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--green);
+            color: var(--green);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--green);
+            color: var(--white);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: var(--black);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--green);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--black);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/8725241/pexels-photo-8725241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 10rem 0;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-bg);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .halal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--green);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        
+        /* Specialties Section */
+        .specialties {
+            background-color: var(--white);
+        }
+        
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .specialty-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .specialty-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .specialty-content {
+            padding: 1.5rem;
+        }
+        
+        .specialty-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .specialty-price {
+            color: var(--green);
+            font-weight: 600;
+        }
+        
+        .specialty-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .halal-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--green);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        /* Menu Section */
+        .menu {
+            background-color: var(--light-bg);
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 0.6rem 1.2rem;
+            background-color: var(--white);
+            border: 1px solid var(--green);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--green);
+            color: var(--white);
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            position: relative;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-item-price {
+            color: var(--green);
+            font-weight: 600;
+        }
+        
+        .menu-item-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-item-btn {
+            width: 100%;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background-color: var(--white);
+            text-align: center;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-bg);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Location Section */
+        .location {
+            background-color: var(--white);
+        }
+        
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .location-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--green);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .info-item i {
+            margin-right: 1rem;
+            color: var(--green);
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--light-bg);
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .review-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .review-name {
+            font-weight: 600;
+        }
+        
+        .review-rating {
+            color: var(--gold);
+            margin-top: 0.2rem;
+        }
+        
+        .review-text {
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Cart Styles */
+        .cart-container {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 350px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            z-index: 999;
+            padding: 1.5rem;
+            display: none;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .cart-container.show {
+            display: block;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 500;
+        }
+        
+        .cart-item-price {
+            color: var(--green);
+            font-weight: 600;
+        }
+        
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #ff4d4d;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .cart-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .cart-btn {
+            width: 100%;
+        }
+        
+        .cart-toggle {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            background-color: var(--green);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            z-index: 998;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--gold);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content, .location-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image, .map-container {
+                order: -1;
+            }
+            
+            .cart-container {
+                width: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.8rem 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 8rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 80%;
+                margin-bottom: 0.5rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .video-container iframe {
+                height: 300px;
+            }
+            
+            .cart-container {
+                width: 90%;
+                right: 5%;
+            }
+            
+            .cart-toggle {
+                top: 80px;
+                right: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .menu-items, .specialties-grid, .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+  <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <span class="logo-text">Узбецька кухня</span>
+            </a>
+            
+            <nav>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                <ul>
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#specialties">Спеціальності</a></li>
+                    <li><a href="#menu">Меню</a></li>
+                    <li><a href="#location">Де ми</a></li>
+                    <li><a href="#reviews">Відгуки</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Toggle -->
+    <div class="cart-toggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Cart Container -->
+    <div class="cart-container">
+        <div class="cart-header">
+            <h3>Ваше замовлення</h3>
+            <button class="cart-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-total">
+            <span>Загалом:</span>
+            <span class="cart-total-price">0 грн</span>
+        </div>
+        <div class="cart-actions">
+            <button class="btn cart-btn" id="checkout-btn">Оформити замовлення</button>
+            <button class="btn btn-outline cart-btn" id="clear-cart-btn">Очистити кошик</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Узбецька кухня— смак, який рухається разом із тобою!</h1>
+            <p>Ми готуємо чесно, швидко й по-справжньому смачно. Наші страви — це поєднання східних спецій, соковитого м'яса та ніжного тіста, приготовані з любов'ю та за халяльними традиціями.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn">Переглянути меню</a>
+                <a href="#location" class="btn btn-secondary">Де нас знайти</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Про нас</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Узбецька кухня— місце, де швидкість зустрічається з традицією. Ми готуємо тільки з халяльних продуктів, щоб кожен шматок мав не лише смак, а й благословення.</p>
+                    <p>Наша кухня поєднує в собі автентичні таджицькі рецепти з сучасним підходом до вуличної їжі. Всі наші страви готуються з найсвіжіших інгредієнтів з дотриманням усіх халяльних стандартів.</p>
+                    <p>Тут плов дихає ароматом, самса хрумтить з першим укусом, а люля-кебаб тане просто в роті. Ми не просто годуємо — ми даруємо шматочок Таджикистану в кожній порції.</p>
+                    <div class="halal-badge">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% Халяль</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/34302001/pexels-photo-34302001.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Приготування страв узбецької кухні">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties" id="specialties">
+        <div class="container">
+            <h2>Наші спеціальності</h2>
+            <div class="specialties-grid">
+                <!-- Specialties will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2>Наше меню</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Усі страви</button>
+                <button class="category-btn" data-category="soups">Супи</button>
+                <button class="category-btn" data-category="dumplings">Пельмені та манти</button>
+                <button class="category-btn" data-category="grill">Шашлик та кебаб</button>
+                <button class="category-btn" data-category="pastries">Випічка</button>
+                <button class="category-btn" data-category="other">Інші страви</button>
+                <button class="category-btn" data-category="drinks">Напої</button>
+            </div>
+            <div class="menu-items">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+<section class="video-section">
+  <div class="container">
+    <h2>Узбецька кухня у TikTok</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/u9zanLNoEP0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .video-section {
+    background: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+  }
+
+  .video-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .video-container iframe {
+      height: 350px;
+    }
+
+    .video-section h2 {
+      font-size: 22px;
+    }
+  }
+</style>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Галерея</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/34298946/pexels-photo-34298946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Плов">
+                    <div class="halal-icon">حلال</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/34298837/pexels-photo-34298837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Шашлик">
+                    <div class="halal-icon">حلال</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/32558920/pexels-photo-32558920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Самса">
+                    <div class="halal-icon">حلال</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/34301990/pexels-photo-34301990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ляпошки">
+                    <div class="halal-icon">حلال</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2>Де нас знайти</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3> Узбецька кухня</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>м. Київ, вул. Закревського, 12<br>поряд з трамвайною лінією</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Нд: 10:00 - 22:00</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span><a href="tel:+38096) 533-18-82">+38 (096) 533-18-82</a></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-subway"></i>
+                        <span>Метро: "Либідська" (10 хв пішки)</span>
+                    </div>
+                    <a href="https://goo.gl/maps/example" target="_blank" class="btn">Відкрити в Google Maps</a>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1234567890123!2d30.529345678901234!3d50.442345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDI2JzMyLjQiTiAzMMKwMzEnNDkuNiJF!5e0!3m2!1suk!2sua!4v1234567890123!5m2!1suk!2sua" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2>Відгуки наших гостей</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">А</div>
+                        <div>
+                            <div class="review-name">Андрій</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Найсмачніший плов у Києві! Відчувається справжній смак Сходу. Обов'язково повернусь ще.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">М</div>
+                        <div>
+                            <div class="review-name">Марія</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Люля-кебаб в тісті - це щось неймовірне! Ніжне м'ясо, ароматне тісто. Дуже смачно і швидко.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">О</div>
+                        <div>
+                            <div class="review-name">Олександр</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Справжня таджицька кухня у Києві! Шурпа дуже насичена та ароматна. Раджу всім спробувати.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Узбецька Кухня</h3>
+                    <p>Справжній смак Сходу у серці Києва. Чисто. Швидко. Смачно. По-справжньому халяль.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Години роботи</h3>
+                    <ul>
+                        <li>Понеділок - Неділя: 10:00 - 22:00</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакти</h3>
+                    <ul>
+                        <li><a href="tel:+380965331882">+38 (096) 533-18-82</a></li>
+                        <li>м. Київ, вул. Закревського, 12</li>
+                        <li>поряд з трамвайною лінією</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Швидкі посилання</h3>
+                    <ul>
+                        <li><a href="#home">Головна</a></li>
+                        <li><a href="#about">Про нас</a></li>
+                        <li><a href="#specialties">Спеціальності</a></li>
+                        <li><a href="#menu">Меню</a></li>
+                        <li><a href="#location">Де ми</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Узбецька кухня. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu data
+        const specialties = [
+            {
+                id: 1,
+                name: "Самса",
+                price: 150,
+                image: "https://images.pexels.com/photos/34298946/pexels-photo-34298946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Традиційна узбецька самса з ніжною ягнятиною, соковитою цибулею та ароматними спеціями. Запікається до золотистої скоринки, щоб кожен шматочок танув у роті й дарував справжній смак Сходу.",
+                category: "other"
+            },
+            {
+                id: 2,
+                name: "Тандир",
+                price: 330,
+                image: "https://images.pexels.com/photos/34298837/pexels-photo-34298837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Ароматне м’ясо, запечене в тандирі до досконалості. Соковита баранина та яловичина з цибулею й східними спеціями набувають неповторного смаку та ніжності, яку дарує тільки справжній тандир.",
+                category: "grill"
+            },
+            {
+                id: 3,
+                name: "Ляпошки",
+                price: 130,
+                image: "https://images.pexels.com/photos/32558920/pexels-photo-32558920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Традиційні узбецькі ляпешки з хрусткою скоринкою та ніжною серединкою. Замішані з любов’ю, посипані кунжутом і випечені в гарячому тандирі, вони пахнуть теплом дому та справжнім Сходом.",
+                category: "pastries"
+            },
+            {
+                id: 4,
+                name: "Чебуреки",
+                price: 120,
+                image: "https://images.pexels.com/photos/8725241/pexels-photo-8725241.jpeg",
+                description: "Соковиті чебуреки з хрусткою золотистою скоринкою та начинкою з ніжної яловичини, цибулі й пряних спецій. Кожен укус — це поєднання ситності, аромату та справжнього східного смаку.",
+                category: "soups"
+            }
+        ];
+
+        const menuItems = [
+            {
+                id: 1,
+                name: "Самса",
+                price: 150,
+                image: "https://images.pexels.com/photos/34298946/pexels-photo-34298946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Традиційна узбецька самса з соковитою начинкою з ягнятини, цибулі та запашних спецій. Випікається в гарячому тандирі до рум’яної скоринки, зберігаючи всередині ніжність і аромат справжньої східної кухні.",
+                category: "other"
+            },
+            {
+                id: 2,
+                name: "Чай",
+                price: 25,
+                image: "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Запашний узбецький чай, заварений з добірного листя та трав. Подається гарячим, щоб зігріти душу й подарувати спокій після ситної трапези. Смак, що об’єднує друзів за одним столом.",
+                category: "soups"
+            },
+            {
+                id: 3,
+                name: "Ляпошки",
+                price: 200,
+                image: "https://images.pexels.com/photos/34301998/pexels-photo-34301998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Традиційні узбецькі ляпешки з хрусткою скоринкою та ніжною серединкою. Замішані з любов’ю, посипані кунжутом і випечені в гарячому тандирі, вони пахнуть теплом дому та справжнім Сходом.",
+                category: "soups"
+            },
+            {
+                id: 4,
+                name: "Пельмені",
+                price: 250,
+                image: "https://images.pexels.com/photos/27356715/pexels-photo-27356715.jpeg",
+                description: "Домашні пельмені з яловичиною та цибулею. Подаються зі сметаною або оцтом.",
+                category: "dumplings"
+            },
+            {
+                id: 5,
+                name: "Пельмені",
+                price: 130,
+                image: "https://images.pexels.com/photos/1103909/pexels-photo-1103909.jpeg",
+                description: "Великі пельмені на пару з ягнятиною, цибулею та спеціями. Традиційна страва тюркських народів.",
+                category: "dumplings"
+            },
+            {
+                id: 6,
+                name: "Ляпошки",
+                price: 120,
+                image: "https://images.pexels.com/photos/34301990/pexels-photo-34301990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Ляпошки — гарячі, духмяні й нереально смачні. 🔥 Золотиста скоринка, м’яка серединка — ідеальні до супу, чаю чи просто замість звичайного хліба. Їхній аромат змусить тебе забути про дієту й думати тільки про ще одну ляпошку.",
+                category: "soups"
+            },
+            {
+                id: 7,
+                name: "Суп та Ляпошки",
+                price: 330,
+                image: "https://images.pexels.com/photos/34298837/pexels-photo-34298837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Суп та ляпошки — ідеальне поєднання тепла, смаку й домашнього затишку. 🥣 ",
+                category: "grill"
+            },
+            {
+                id: 8,
+                name: "Люля-кебаб в тісті",
+                price: 110,
+                image: "https://images.pexels.com/photos/8963961/pexels-photo-8963961.jpeg",
+                description: "Люля-кебаб, загорнутий у тонке тісто та запечений до золотистої скоринки.",
+                category: "grill"
+            },
+            {
+                id: 9,
+                name: "Самса",
+                price: 130,
+                image: "https://images.pexels.com/photos/14286677/pexels-photo-14286677.jpeg",
+                description: "Пиріжки з листкового тіста з начинкою з ягнятини, цибулі та спецій. Випікаються в тандирі.",
+                category: "pastries"
+            },
+            {
+                id: 10,
+                name: "Курині крильця",
+                price: 160,
+                image: "https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Хрумкі курині крильця в медово-гірчичному соусі з додаванням спецій.",
+                category: "grill"
+            },
+            {
+                id: 11,
+                name: "Шаурма",
+                price: 100,
+                image: "https://images.pexels.com/photos/5779372/pexels-photo-5779372.jpeg",
+                description: "Лаваш з куркою, свіжими овочами та соусом. Ідеальний вибір для швидкого перекусу.",
+                category: "other"
+            },
+            {
+                id: 12,
+                name: "Баранина в кувшині",
+                price: 340,
+                image: "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Ніжна баранина, тушкована в глиняному кувшині з овочами та спеціями.",
+                category: "other"
+            },
+            {
+                id: 13,
+                name: "Кава",
+                price: 25,
+                image: "https://images.pexels.com/photos/34299175/pexels-photo-34299175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Ароматна кава, приготована в турці. Ідеальний супутник до десертів.",
+                category: "drinks"
+            },
+            {
+                id: 14,
+                name: "Чай",
+                price: 20,
+                image: "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                description: "Ароматний чорний або зелений чай. Подається з цукром або лимоном.",
+                category: "drinks"
+            }
+        ];
+
+        // Cart functionality
+        let cart = [];
+        const cartToggle = document.querySelector('.cart-toggle');
+        const cartContainer = document.querySelector('.cart-container');
+        const cartItems = document.querySelector('.cart-items');
+        const cartTotalPrice = document.querySelector('.cart-total-price');
+        const cartCount = document.querySelector('.cart-count');
+        const cartClose = document.querySelector('.cart-close');
+        const clearCartBtn = document.getElementById('clear-cart-btn');
+        const checkoutBtn = document.getElementById('checkout-btn');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSpecialties();
+            renderMenuItems();
+            setupEventListeners();
+            updateCart();
+        });
+
+        // Render specialties
+        function renderSpecialties() {
+            const specialtiesGrid = document.querySelector('.specialties-grid');
+            specialtiesGrid.innerHTML = '';
+            
+            specialties.forEach(item => {
+                const specialtyCard = document.createElement('div');
+                specialtyCard.className = 'specialty-card';
+                specialtyCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="specialty-img">
+                    <div class="halal-icon">حلال</div>
+                    <div class="specialty-content">
+                        <div class="specialty-title">
+                            <h3>${item.name}</h3>
+                            <span class="specialty-price">${item.price} грн</span>
+                        </div>
+                        <p class="specialty-desc">${item.description}</p>
+                        <button class="btn add-to-cart-btn" data-id="${item.id}">Додати до кошика</button>
+                    </div>
+                `;
+                specialtiesGrid.appendChild(specialtyCard);
+            });
+        }
+
+        // Render menu items
+        function renderMenuItems(filter = 'all') {
+            const menuItemsContainer = document.querySelector('.menu-items');
+            menuItemsContainer.innerHTML = '';
+            
+            const filteredItems = filter === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === filter);
+            
+            filteredItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'menu-item';
+                menuItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="menu-item-img">
+                    <div class="halal-icon">حلال</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>${item.name}</h3>
+                            <span class="menu-item-price">${item.price} грн</span>
+                        </div>
+                        <p class="menu-item-desc">${item.description}</p>
+                        <button class="btn menu-item-btn add-to-cart-btn" data-id="${item.id}">Додати до кошика</button>
+                    </div>
+                `;
+                menuItemsContainer.appendChild(menuItem);
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+
+            // Category filter buttons
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const category = btn.getAttribute('data-category');
+                    renderMenuItems(category);
+                });
+            });
+
+            // Add to cart buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart-btn')) {
+                    const itemId = parseInt(e.target.getAttribute('data-id'));
+                    addToCart(itemId);
+                }
+            });
+
+            // Cart toggle
+            cartToggle.addEventListener('click', () => {
+                cartContainer.classList.toggle('show');
+            });
+
+            // Close cart
+            cartClose.addEventListener('click', () => {
+                cartContainer.classList.remove('show');
+            });
+
+            // Clear cart
+            clearCartBtn.addEventListener('click', clearCart);
+
+            // Checkout
+            checkoutBtn.addEventListener('click', checkout);
+        }
+
+        // Add item to cart
+        function addToCart(itemId) {
+            const item = menuItems.find(i => i.id === itemId);
+            if (item) {
+                const existingItem = cart.find(i => i.id === itemId);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        quantity: 1
+                    });
+                }
+                updateCart();
+                // Show cart when adding an item
+                cartContainer.classList.add('show');
+            }
+        }
+
+        // Remove item from cart
+        function removeFromCart(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            updateCart();
+        }
+
+        // Update cart display
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let count = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                count += item.quantity;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price} грн × ${item.quantity}</div>
+                    </div>
+                    <button class="cart-item-remove" data-id="${item.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+             cartTotalPrice.textContent = `${total} грн`;
+            cartCount.textContent = count;
+            
+            // Add event listeners to remove buttons
+            const removeBtns = document.querySelectorAll('.cart-item-remove');
+            removeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = parseInt(this.getAttribute('data-id'));
+                    removeFromCart(itemId);
+                });
+            });
+        }
+
+        // Clear cart
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Ваш кошик порожній!');
+                return;
+            }
+            
+            const phoneNumber = "+380965331882";
+            let message = "Замовлення в Узбецька кухня:%0A";
+            
+            cart.forEach(item => {
+                message += `${item.name} - ${item.quantity} шт. - ${item.price * item.quantity} грн%0A`;
+            });
+            
+            message += `%0AЗагальна сума: ${cart.reduce((total, item) => total + (item.price * item.quantity), 0)} грн`;
+            message += `%0A%0AАдреса: м. Київ, вул. Закревського, 12`;
+            
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
